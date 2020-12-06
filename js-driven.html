@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <!-- <a href="https://docs.google.com/presentation/d/1AqjuNWmsU7C_xD0_hXrP-ivELqp5OKD4eE8vMwJXAAk/embed" rel="driver">Deck</a> -->
+  <style>
+    html, body { width: 100%; height: 100%; margin: 0; padding: 0 }
+    body { display: flex }
+    iframe { border: 0; flex-grow: 1 }
+  </style>
+  <iframe src="https://docs.google.com/presentation/d/1AqjuNWmsU7C_xD0_hXrP-ivELqp5OKD4eE8vMwJXAAk/embed" onload="this.contentWindow.focus()">
+  <!-- <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      let a = document.querySelector('a[rel=driver]');
+      if (!a) return;
+      let url = a.href;
+      if (!url) return;
+      document.body.innerHTML = `<style>
+          html, body { width: 100%; height: 100%; margin: 0; padding: 0 }
+          body { display: flex }
+          iframe { border: 0; flex-grow: 1 }
+        </style>`;
+      let iframe = document.createElement('iframe');
+      iframe.allowFullscreen = true;
+      iframe.addEventListener('load', () => {
+        iframe.contentWindow.focus();
+      });
+      window.onmessage = (message) => {
+        console.log(message);
+      }
+      iframe.src = url;
+      document.body.appendChild(iframe);
+    });
+  </script> -->
+</html>

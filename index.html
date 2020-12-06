@@ -1,0 +1,35 @@
+<style>
+  html, body, div#masthead, div#content, 
+  div#page, main#main, div#primary, div.site-inner,
+  div.entry-content, article { 
+    width: 100%; height: 100%; margin: 0; padding: 0; max-width: initial; }
+  header { display: none }
+  div.entry-content { display: flex }
+  iframe { border: 0; flex-grow: 1 }
+  body.page::after, body.page::before { display: none }
+  div.sharedaddy { display: none }
+</style>
+<script>
+  function getSlideHash() {
+    let hash = window.location.hash;
+    [key, value] = hash.split('=');
+    if (key != '#slide') return '';
+    let numeric_value = Number(value);
+    if (isNaN(numeric_value)) return '';
+    return hash;
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded');
+    let iframe = document.querySelector('iframe');
+    let updateHash = () => {
+      let url = new URL(iframe.src);
+      url.hash = getSlideHash();
+      iframe.src = url.toString();
+    } 
+    updateHash();
+    iframe.addEventListener('load', () => iframe.contentWindow.focus());
+    window.addEventListener('hashchange', updateHash);
+  });
+</script>
+<iframe allowfullscreen src="https://docs.google.com/presentation/d/1AqjuNWmsU7C_xD0_hXrP-ivELqp5OKD4eE8vMwJXAAk/embed">
